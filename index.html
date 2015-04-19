@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Slideshow Maker for Android</title>
+<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cosmo/bootstrap.min.css" rel="stylesheet"/>
+   <link rel="stylesheet" href="owl.carousel/owl.carousel.2.0.0-beta.2.4/assets/owl.carousel.css" type="text/css"  media="all">
+       <link rel="shortcut icon" href="https://picovico-dot-com.s3.amazonaws.com/static1/extent/images/favicon.ico">
+
+  </head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-alternate" style="margin-top:20px">
+          <div class="navbar-header">
+			<h3>CONVERT PHOTOS INTO VIDEOS.</h3>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="http://www.picovico.com/business">Picovico for business</a></li>
+              <li class="active"><a href="http://api.picovico.com">Developers API</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+      </nav>
+<header>
+	<hr />
+        <h1 class="header">
+			<a href="#slides"><strong>Slideshow Maker</strong> for Android<sup>TM</sup></a>
+	<br />
+		<small>From PICOVICO</small>
+	</h1>
+    </header>
+	
+
+  <style type="text/css">
+  body{
+    background: whitesmoke
+  }
+	.header a{color:black; text-decoration: none}
+	.header a:hover{text-decoration: none; color: #d32f2f}
+	.header {
+	text-align:center;
+	}
+	.header{margin-top:25%; margin-bottom:25%;}
+	#slides-container{margin-top:25%}
+	#owl-pv-items{
+		padding-left:25%;
+		padding-right:25%;
+		display:block;
+		text-align:center;
+		padding-bottom:20px;
+	}
+    #owl-pv-items > div img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+.owl-controls{
+background:white;
+width:100%;
+display:none;
+margin-top:20px;
+margin-bottom: 10px;
+}
+.owl-dot{
+	width:10px;height:10px;background:gray;
+	display:inline-block; padding:5px;margin:5px;
+border-radius:100px;
+}
+.owl-dot.active{
+	background:black
+}
+#slides-container{
+  background: #00887A;
+}
+</style>
+</div>
+
+<div class="container-fluid" id="slides-container">
+  <div class="widget container" id="slides">
+      <div class="widget-inner">
+  <div id="owl-pv-items">
+        <div><a href="http://www.picovico.com/android"><img src="http://blog.picovico.com/theme/images/selfie/i_addcontent_3.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/android"><img src="http://blog.picovico.com/theme/images/selfie/i_login_1.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/android"><img src="http://blog.picovico.com/theme/images/selfie/i_myvideos_2.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/android-app"><img src="http://blog.picovico.com/theme/images/selfie/i_profile_8.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/android"><img src="http://blog.picovico.com/theme/images/selfie/i_selectmusic_5.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/android"><img src="http://blog.picovico.com/theme/images/selfie/i_splash_0.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/business"><img src="http://blog.picovico.com/theme/images/selfie/i_stylepreview_7.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/android-app"><img src="http://blog.picovico.com/theme/images/selfie/i_uploadimages_4.png.jpg"  /></a></div>
+        <div><a href="http://www.picovico.com/android-app"><img src="http://blog.picovico.com/theme/images/selfie/i_videostyle_6.png.jpg"  /></a></div>
+</div>
+</div>
+  </div>
+</div>
+<script type="text/javascript" src="http://blog.picovico.com/theme/js/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="owl.carousel/owl.carousel.2.0.0-beta.2.4/owl.carousel.min.js"></script>
+   <script type="text/javascript" src="smooth.js"></script>
+
+   <script type="text/javascript">
+var color_maps = ["#00887A", "#516D79", "#4CB6AC", "#96D8E8", "#60CA80", "#47A6E8", "#FACB59", "#9EA8DB", "#5C6BC0" ];
+function post_change(event, owl){
+	if(event == null){ var o = 0 ; }else{
+	var o = event.item.index;
+	}
+	var img = owl.find("div.owl-item:nth-child(" + (o + 1) + ") img");
+	$("#slides-container").css({backgroundColor: "" + color_maps[o] + ""});
+};
+
+   $(function(){
+      var owl = $("#owl-pv-items");
+	owl.owlCarousel({ 
+		items: 1,
+         autoplay: true,
+         singleItem: true,
+		dots: true
+      });
+
+owl.on('translated.owl.carousel', function(event){
+	post_change(event, owl);
+});
+
+   });
+    </script>
+</body>
